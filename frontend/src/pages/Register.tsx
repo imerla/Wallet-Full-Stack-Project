@@ -91,9 +91,12 @@ function Register() {
             <p className="auth-subtitle">Your account has been created</p>
           </div>
           <div className="alert alert-success">
-            <strong>Username:</strong> {formData.username}
-            <br />
-            <strong>Email:</strong> {formData.email}
+            <div>
+              <strong>Username:</strong> {formData.username}
+            </div>
+            <div>
+              <strong>Email:</strong> {formData.email}
+            </div>
           </div>
           <Link to="/login" className="btn btn-primary btn-block">
             Go to Login
