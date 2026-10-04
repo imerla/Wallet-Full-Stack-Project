@@ -9,7 +9,7 @@ async function bootstrap() {
     origin: [
       'http://localhost:5173',
       'https://wallet-full-stack-project.onrender.com',
-      /^https:\/\/.*\.vercel\.app$/,
+      'https://wallet-full-stack-project-6dbhhyeck-imera.vercel.app',
     ],
     credentials: true,
   });
