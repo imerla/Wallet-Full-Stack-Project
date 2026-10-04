@@ -53,7 +53,7 @@ interface JwtPayload {
 
 @WebSocketGateway({
   cors: {
-    origin: ['http://localhost:5173', 'https://wallet-full-stack-project.onrender.com', /^https:\/\/.*\.vercel\.app$/],
+    origin: ['http://localhost:5173', 'https://wallet-full-stack-project.onrender.com', 'https://wallet-full-stack-project-6dbhhyeck-imera.vercel.app'],
     credentials: true,
   },
 })
