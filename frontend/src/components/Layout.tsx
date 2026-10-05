@@ -117,7 +117,6 @@ function Layout() {
               </div>
               <div className="layout-user-details">
                 <span className="layout-user-name">{wallet.username || 'User'}</span>
-                <span className="layout-user-email">{wallet.email || ''}</span>
               </div>
             </Link>
           )}
