@@ -176,7 +176,7 @@ MongoDB Database
 - **Ownership Validation**: Users can only access their own data (wallet, transactions, notifications)
 - **Input Validation**: class-validator DTOs for all API inputs
 - **WebSocket Authentication**: JWT validation on Socket.IO connection
-- **CORS**: Configured for specific origin (http://localhost:5173)
+- **CORS**: Configured for specific origins (http://localhost:5173, https://wallet-full-stack-project.vercel.app)
 - **Password Exclusion**: Password field never returned in API responses
 - **NoSQL Injection Prevention**: Mongoose ObjectId casting prevents injection
 
@@ -216,6 +216,11 @@ Create `.env` file in frontend directory:
 
 ```env
 VITE_API_URL=http://localhost:3000
+```
+
+For production deployment (Vercel), use:
+```env
+VITE_API_URL=https://wallet-full-stack-project.onrender.com
 ```
 
 ## Environment Variables
@@ -270,6 +275,47 @@ npm run build
 ```
 
 Output is generated in `backend/dist/`
+
+## Deployment
+
+### Backend (Render)
+
+The backend is deployed on Render at: https://wallet-full-stack-project.onrender.com
+
+**Render Configuration:**
+- Build Command: `npm install && npm run build`
+- Start Command: `npm run start:prod`
+- Environment Variables:
+  - `MONGO_URI`: MongoDB connection string
+  - `JWT_SECRET`: Secret key for JWT signing
+  - `PORT`: 3000
+  - `BREVO_API_KEY`: Brevo API key (optional)
+
+### Frontend (Vercel)
+
+The frontend is deployed on Vercel at: https://wallet-full-stack-project.vercel.app/
+
+**Vercel Configuration (vercel.json):**
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+**Environment Variables:**
+- `VITE_API_URL`: https://wallet-full-stack-project.onrender.com
+
+**Deployment Steps:**
+1. Connect frontend directory to Vercel
+2. Set `VITE_API_URL` environment variable in Vercel dashboard
+3. Deploy - Vercel will automatically build and deploy
 
 ## Testing
 
