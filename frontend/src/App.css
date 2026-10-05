@@ -854,11 +854,9 @@ a.btn-secondary:hover {
 }
 
 .alert-error {
-  background: var(--danger-bg);
-  border: 1px solid var(--danger-light);
-  color: var(--danger);
   display: block;
   font-size: var(--font-size-sm);
+  color: var(--danger);
   margin-top: var(--space-2);
   font-weight: var(--font-weight-medium);
 }
